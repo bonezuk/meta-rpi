@@ -13,5 +13,5 @@ FILES_${PN} = "${libdir}/*.so.*"
 do_install_append() {
 	install -d ${D}${includedir}
 	install -d ${D}${includedir}/replaygain
-	cp -r ${S}/include/replaygain* ${D}${includedir}/replaygain
+	cp ${S}/include/replaygain/* ${D}${includedir}/replaygain
 }
