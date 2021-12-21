@@ -12,8 +12,11 @@ inherit pkgconfig cmake
 
 do_install_append() {
 	install -d ${D}${libdir}
-	cp ${B}/libmpcdec/libmpcdec.s* ${D}${libdir}
-	chmod 755 ${D}${libdir}/libmpcdec.s*
+	cp ${B}/libmpcdec/libmpcdec.so ${D}${libdir}
+	chmod 755 ${D}${libdir}/libmpcdec.so
+	mv ${D}${libdir}/libmpcdec.so ${D}${libdir}/libmpcdec.so.1.0.0
+	ln -s ./libmpcdec.so.1.0.0 ${D}${libdir}/libmpcdec.so.1
+	ln -s ./libmpcdec.so.1.0.0 ${D}${libdir}/libmpcdec.so
 
 	install -d ${D}${includedir}/mpc
 	cp ${S}/include/mpc/*.h ${D}${includedir}/mpc/

@@ -49,6 +49,23 @@ QT5_PKGS = " \
     qtxmlpatterns \
 "
 
+OMEGA_APPS += " \
+    googletest \
+    googletest-dev \
+    libupnp \
+    libupnp-dev \
+    libxml2 \
+    libxml2-dev \
+    libcuefile \
+    libcuefile-dev \
+    libreplaygain \
+    libreplaygain-dev \
+    musepack \
+    musepack-dev \
+    wavpack \
+    wavpack-dev \
+"
+
 TEST_APPS += " \
     qmlswipe-tools \
     qt5-opengles2-test \
@@ -58,6 +75,7 @@ IMAGE_INSTALL += " \
     ${QT5_DEV_PKGS} \
     ${QT5_PKGS} \
     ${TEST_APPS} \
+    ${OMEGA_APPS} \
 "
 
-export IMAGE_BASENAME = "qt5-image"
+export IMAGE_BASENAME = "omega-pi-image"
